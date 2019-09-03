@@ -94,17 +94,32 @@
     # 9 - Nota - switch
 
     $nota = 8;
-if($nota === 0) {
-    echo "desaprobado";
-} else {
     switch($nota) {
-        case ($nota < 4):
+        case 0:
             echo "desaprobado";
             break;
-        case ($nota === 4 && $nota === 5):
+        case 1:
+            echo "desaprobado";
+            break;
+        case 2:
+            echo "desaprobado";
+            break;
+        case 3:
+            echo "desaprobado";
+            break;
+        case 4:
             echo "zafamos";
             break;
-        case ($nota >= 6 && $nota <= 8):
+        case 5:
+            echo "zafamos";
+            break;
+        case  6:
+            echo "Bien!!!";
+            break;
+        case  7:
+            echo "Bien!!!";
+            break;
+        case  8:
             echo "Bien!!!";
             break;
         case 9:
@@ -117,7 +132,7 @@ if($nota === 0) {
             echo "El número no es válido";
             break;
     }
-}
+
 
 
 ?>
