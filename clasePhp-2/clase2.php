@@ -187,9 +187,27 @@ $ceu = array( "Italia"=>"Roma", "Luxembourg"=>"Luxembourg",
 
 Crear un script que muestre el nombre de la capital y el país desde 
 la variable $ceu.
+-->
+<p>Ejercicio 9</p>
+<?php
+$ceu = array( "Italia"=>"Roma", "Luxembourg"=>"Luxembourg", 
+"Bélgica"=> "Bruselas", "Dinamarca"=>"Copenhagen", 
+"Finlandia"=>"Helsinki", "Francia" => "Paris", 
+"Slovakia"=>"Bratislava", "Eslovenia"=>"Ljubljana", 
+"Alemania" => "Berlin", "Grecia" => "Athenas", "Irlanda"=>"Dublin", 
+"Holanda"=>"Amsterdam", "Portugal"=>"Lisbon", "España"=>"Madrid", 
+"Suecia"=>"Stockholm", "Reino Unido"=>"London", "Chipre"=>"Nicosia", 
+"Lithuania"=>"Vilnius", "Republica Checa"=>"Prague", 
+"Estonia"=>"Tallin", "Hungría"=>"Budapest", "Latvia"=>"Riga", 
+"Malta"=>"Valletta", "Austria" => "Vienna", "Polonia"=>"Warsaw");
+
+foreach($ceu as $key => $value) :
+    echo "$value es capital de $key";?>
+    <br>
+<?php endforeach; ?>
 
 
-
+<!--
 10. Partiendo de un archivo con la siguiente variable definida:
 
 
@@ -224,7 +242,36 @@ Santa Fé
 Brasilia
 Rio de Janeiro
 Sao Pablo
+-->
+<p>Ejercicio 9</p>
+<?php
+$ceu = [
 
+    "Argentina" => ["Buenos Aires", "Córdoba", "Santa Fé"],
+
+    "Brasil" => ["Brasilia", "Rio de Janeiro", "Sao Pablo"],
+
+    "Colombia" => ["Cartagena", "Bogota", "Barranquilla"],
+
+    "Francia" => ["Paris", "Nantes", "Lyon"],
+
+    "Italia" => ["Roma", "Milan", "Venecia"],
+
+    "Alemania" => ["Munich", "Berlin", "Frankfurt"]
+
+];
+
+foreach($ceu as $key => $value) :
+    echo "Las ciudades de $key:";
+    for($i = 0; $i < count($value); $i++) :
+         ?>
+    <br>
+    <ul>
+        <li><?= $value[$i]; ?></li>
+    </ul>
+<?php endfor;
+endforeach; ?>
+<!--
 15. A partir del ejercicio anterior:
 
 
@@ -237,3 +284,4 @@ un array asociativo por cada país en donde cada país tendrá los
 datos de sus ciudades y esAmericano.
 
 --> 
+
