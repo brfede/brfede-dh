@@ -101,11 +101,6 @@ d.<br>
 
 ?>
 <br>
-<!--
-6. Definir un array con 10 números aleatorios entre 0 y 10. 
-Recorrer este array para imprimir todos los números. 
-La ejecución debe terminarse si alguno de los números encontrados 
-es un 5 (Se debe imprimir “Se encontró un 5!”)-->
 <p>Ejercicio 6</p>
 <?php 
     $randArr = [];
@@ -123,9 +118,7 @@ es un 5 (Se debe imprimir “Se encontró un 5!”)-->
             break;
         }
     } ?>
-<!--
-7. Definir un array con 10 números aleatorios entre 0 y 100. 
-Recorrer este array contando cuantos números son pares.-->
+
 <p>Ejercicio 7</p>
 <?php 
     $randArr = [];
@@ -141,22 +134,6 @@ Recorrer este array contando cuantos números son pares.-->
     }
     echo $contador;
 ?>
-<!--
-8. Definir una variable $mascota que sea un array asociativo
-a. En el índice animal debe decir qué animal es.
-b. En el índice edad debe decir la edad.
-c. En el índice altura debe decir la altura.
-d. En el índice nombre debe decir el nombre
-
-e. Recorrer los valores del array con un foreach imprimiendo (como 
-ejemplo):
-animal: perro
-
-edad: 5
-
-altura: 0,60
-
-nombre: Sonic-->
 <p>Ejercicio 8</p>
 <?php 
     $mascota = [
@@ -171,23 +148,6 @@ nombre: Sonic-->
         <br>
 <?php endforeach; ?>
 
-<!--
-9. Partiendo de un archivo con la siguiente variable definida:
-
-$ceu = array( "Italia"=>"Roma", "Luxembourg"=>"Luxembourg", 
-"Bélgica"=> "Bruselas", "Dinamarca"=>"Copenhagen", 
-"Finlandia"=>"Helsinki", "Francia" => "Paris", 
-"Slovakia"=>"Bratislava", "Eslovenia"=>"Ljubljana", 
-"Alemania" => "Berlin", "Grecia" => "Athenas", "Irlanda"=>"Dublin", 
-"Holanda"=>"Amsterdam", "Portugal"=>"Lisbon", "España"=>"Madrid", 
-"Suecia"=>"Stockholm", "Reino Unido"=>"London", "Chipre"=>"Nicosia", 
-"Lithuania"=>"Vilnius", "Republica Checa"=>"Prague", 
-"Estonia"=>"Tallin", "Hungría"=>"Budapest", "Latvia"=>"Riga", 
-"Malta"=>"Valletta", "Austria" => "Vienna", "Polonia"=>"Warsaw");
-
-Crear un script que muestre el nombre de la capital y el país desde 
-la variable $ceu.
--->
 <p>Ejercicio 9</p>
 <?php
 $ceu = array( "Italia"=>"Roma", "Luxembourg"=>"Luxembourg", 
@@ -207,43 +167,7 @@ foreach($ceu as $key => $value) :
 <?php endforeach; ?>
 
 
-<!--
-10. Partiendo de un archivo con la siguiente variable definida:
-
-
-$ceu = [
-
-        "Argentina" => ["Buenos Aires", "Córdoba", "Santa Fé"],
-
-        "Brasil" => ["Brasilia", "Rio de Janeiro", "Sao Pablo"],
-
-        "Colombia" => ["Cartagena", "Bogota", "Barranquilla"],
-
-        "Francia" => ["Paris", "Nantes", "Lyon"],
-
-        "Italia" => ["Roma", "Milan", "Venecia"],
-
-        "Alemania" => ["Munich", "Berlin", "Frankfurt"]
-
-];
-
-
-Crear un script que muestre el nombre de cada país y sus ciudades 
-desde la variable $ceu con el siguiente formato:
-
-
-        Las ciudades de Argentina son:
-
-Buenos Aires
-Córdoba
-Santa Fé
-        Las ciudades de Brasil son:
-
-Brasilia
-Rio de Janeiro
-Sao Pablo
--->
-<p>Ejercicio 9</p>
+<p>Ejercicio 10</p>
 <?php
 $ceu = [
 
@@ -285,3 +209,35 @@ datos de sus ciudades y esAmericano.
 
 --> 
 
+
+<p>Ejercicio 11</p>
+<?php
+$ceu = [
+
+    "Argentina" => ["Buenos Aires", "Córdoba", "Santa Fé", "esAmericano" => true],
+
+    "Brasil" => ["Brasilia", "Rio de Janeiro", "Sao Pablo", "esAmericano" => true],
+
+    "Colombia" => ["Cartagena", "Bogota", "Barranquilla", "esAmericano" => true],
+
+    "Francia" => ["Paris", "Nantes", "Lyon", "esAmericano" => false],
+
+    "Italia" => ["Roma", "Milan", "Venecia", "esAmericano" => false],
+
+    "Alemania" => ["Munich", "Berlin", "Frankfurt", "esAmericano" => false]
+
+];
+
+foreach($ceu as $key => $value) :
+    if($key["esAmericano"]) :
+
+        echo "Las ciudades de $key:";
+        for($i = 0; $i < count($value); $i++) :
+            ?>
+    <br>
+    <ul>
+        <li><?= $value[$i]; ?></li>
+    </ul>
+<?php endfor;
+endif;
+endforeach; ?>
